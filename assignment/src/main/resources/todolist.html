@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>실습 3-2</title>
+    <style>
+        body {
+            margin: 10%;
+            color: #0f0f0f;
+            background-color: white;
+        }
+        .container-box {
+
+            background: orange;
+            width: 800px;
+            height: 500px;
+            border: solid 5px black;
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        .contents  {
+            padding-left: 10%;
+            padding-right: 10%;
+
+
+        }
+        .contents input{
+            color: black;
+            padding-left: 15px;
+            padding-right: 0px;
+            width: 300px;
+            height: 100%;
+            border: none;
+            font-size: 15px;
+            border-radius: 5px;
+            outline: none;
+        }
+        .contents button{
+            width: 100px;
+            height: 100%;
+            padding-left: 0px;
+            border: none;
+            border-radius: 5px;
+            background: red;
+        }
+        .list ul{
+            display: inline-list-item;
+        }
+
+        .list li{
+            width: 650px;
+            list-style:none;
+            line-height: 40px;
+            position: relative;
+            margin-bottom: 0px;
+            text-indent: 15px;
+            background: white;
+            border-radius: 3px;
+            font-weight: 400;
+            outline-color: black;
+        }
+
+
+
+
+    </style>
+
+
+</head>
+<body>
+    <div class="container-box">
+        <div class="contents">
+            <h2>My ToDo App</h2>
+            <hr color="black">
+            <div>
+                <input id="item" type="text" placeholder="할일을 입력하세요">
+                <button id="button" type="button" >할일 추가</button>
+            </div>
+            <hr color="black">
+            <div class="list">
+                <ul id="todolist" >
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        let inputBox = document.getElementById('item');
+        let addToDo = document.getElementById('button');
+        let toDoList = document.getElementById('todolist');
+        addToDo.addEventListener('click', function() {
+            let list = document.createElement('li');
+
+            if (!inputBox.value)
+                alert('내용을 입력해 주세요!');
+            else {
+                list.innerText = inputBox.value;
+                toDoList.appendChild(list);
+                inputBox.value = "";
+            }
+        })
+
+    </script>
+
+</body>
+</html>
